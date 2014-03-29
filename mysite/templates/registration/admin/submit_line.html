@@ -1,8 +1,0 @@
-{% load i18n admin_urls %}
-<div class="submit-row">
-{% if show_save %}<input type="submit" value="{% trans 'Salva' %}" class="default" name="_save" {{ onclick_attrib }}/>{% endif %}
-{% if show_delete_link %}<p class="deletelink-box"><a href="{% url opts|admin_urlname:'delete' original.pk|admin_urlquote %}" class="deletelink">{% trans "Cancella" %}</a></p>{% endif %}
-{% if show_save_as_new %}<input type="submit" value="{% trans 'Salva come nuovo' %}" name="_saveasnew" {{ onclick_attrib }}/>{%endif%}
-{% if show_save_and_add_another %}<input type="submit" value="{% trans 'Salva e aggiungi ancora' %}" name="_addanother" {{ onclick_attrib }}/>{% endif %}
-{% if show_save_and_continue %}<input type="submit" value="{% trans 'Salva e continua' %}" name="_continue" {{ onclick_attrib }}/>{% endif %}
-</div>
