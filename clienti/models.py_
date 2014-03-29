@@ -1,0 +1,32 @@
+from django.db import models
+from datetime import datetime, timedelta
+
+from datetime import *
+import datetime
+
+
+def default_start_time():
+    now   = datetime.now()
+    seven = datetime.now() + timedelta(hours=7)
+    start = seven
+    #start = now.replace(hour=22, minute=0, second=0, microsecond=0)
+    return start
+
+#def anno():
+    #return datetime.date.today().strftime("%d %m %Y")[6:]
+
+
+class Clienti(models.Model):
+    ragione_sociale      = models.CharField(max_length=200)
+    indirizzo            = models.CharField(max_length=200)
+    citta                = models.CharField(max_length=100)
+    annotazioni          = models.CharField(max_length=200)
+    ultima_consegna      = models.DateField(default=default_start_time)
+    #anno_ultima_consegna = models.CharField(max_length=4, default=anno)
+ 
+
+class Choice(models.Model):
+    clienti = models.ForeignKey(Clienti)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
+
