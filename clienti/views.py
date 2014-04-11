@@ -46,10 +46,25 @@ def pippo(request):
        tmp3 = tmp2[:-3]
        risp = risp + tmp3
        recipient = tmp3
-       body = "carissimo " + recipient + "!!" + " sbrigati a comprare..."
+       body = "my dear " + recipient + "!" + " take a look on this offer..."
        session.sendmail(sender, recipient, headers + "\r\n\r\n" + body)
     session.quit()
-    return HttpResponse("Mass Mailing Terminata con successo...")
+
+    ans = """
+
+<html>
+
+  <head>
+  </head>
+
+  <body>
+    <a href="http://www.speedystack.com:8042/admin/">Mailing Successfully terminated. Back to Home</a>
+  </body>
+
+</html>
+
+    """
+    return HttpResponse(ans)
 
 
 
