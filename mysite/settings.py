@@ -1,7 +1,7 @@
 # Django settings for mysite project.
 import os
 
-PROJECT_DIR = '/root/crm/crm-source/mysite'
+PROJECT_DIR = '/root/crm-server-002/crm-source/mysite'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -14,9 +14,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3', # Add  'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'sqlite.db',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
@@ -124,9 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'polls',
     'clienti',
-    'gunicorn',
     'south',
     'django.contrib.admin',
     'django.contrib.admindocs',
