@@ -12,7 +12,7 @@ if __name__ == '__main__':
     server = cherrypy._cpserver.Server()
 
     server.socket_host = "0.0.0.0"
-    server.socket_port = 8040
+    server.socket_port = 8042
     server.thread_pool = 30
 
 
