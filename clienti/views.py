@@ -5,7 +5,7 @@ from django.views.generic import ListView
 from clienti.models import Clienti
 
 def index(request):
-    return HttpResponse("INDEX 888888888888 tu sei.")
+    return HttpResponse("Started Mass Mailing.")
 
 import sqlite3
 
