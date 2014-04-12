@@ -1,7 +1,6 @@
 # Django settings for mysite project.
-import os
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
+import os
 
 PROJECT_DIR = '/root/crm-server-002/crm-source/mysite'
 
@@ -126,7 +125,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'clienti',
-    'suit',
     'south',
     'django.contrib.admin',
     'django.contrib.admindocs',
