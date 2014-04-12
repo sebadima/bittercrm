@@ -74,6 +74,9 @@
     {% block footer %}<div id="footer"></div>{% endblock %}
 </div>
 <!-- END Container -->
-<a href="http://www.speedystack.com:8042/lancio"> &nbsp&nbsp Lauch Mass Mailing</a>
+{% if user.is_authenticated %}
+   <a href="http://www.speedystack.com:8042/lancio"> &nbsp&nbsp Lauch Mass Mailing</a>
+{% endif %}
 </body>
 </html>
+
