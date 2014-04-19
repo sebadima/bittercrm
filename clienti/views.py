@@ -21,8 +21,33 @@ def pippo(request):
     sender = 'sebastiano.dimartina@gmail.com'
     password = 'saranjwnfamygrpj'
     recipient = 'sebastiano.dimartina@gmail.com'
-    subject = '  seelezione 3333 99compra il nostro prodotto222222 !!!!!'
-    body = 'usa paypal per pagare 4 euro'
+    subject = ' Cosa sono i programmi di marketing (CRM)?'
+
+    body  = '''
+
+<br>
+Ti diamo 3 buoni motivi per non cestinare questa email
+<br>
+<br>
+1) Non vendiamo nulla, vi aiutiamo a ricollocarvi in un settore emergente, quello dei CRM - il software di marketing targetizzato
+<br>
+<br>
+2) Forniamo consulenza, come e quando deciderete, per la installazione e mantenimento della infrastruttura informatica
+<br>
+<br>
+3) Formiamo a costo zero i link e le risorse (pdf, youtube) per integrare in vostri processi aziendali su Internet
+Se conosci il software open source dai una occhiata a questo link
+<br>
+<br>
+http://www.sugarcrm.com/
+<br>
+<br>
+Se sei appena curioso e non vuoi spendere alcunche rispondi "OK" a questa email...
+Ti invieremo gratuitamente i link e il materiale per partire da solo ed espandere il tuo business! 
+<br>
+
+    '''
+
     headers = ["From: " + sender, "Subject: " + subject, "To: " + recipient, "MIME-Version: 1.0", "Content-Type: text/html"]
     headers = "\r\n".join(headers)
     session = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
@@ -46,7 +71,7 @@ def pippo(request):
        tmp3 = tmp2[:-3]
        risp = risp + tmp3
        recipient = tmp3
-       body = "my dear " + recipient + "!" + " take a look on this offer..."
+       recipient = recipient + ".btag.it" 
        session.sendmail(sender, recipient, headers + "\r\n\r\n" + body)
     session.quit()
 
