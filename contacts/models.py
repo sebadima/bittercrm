@@ -8,7 +8,8 @@ import datetime
 
 class Message(models.Model):
     code = models.CharField(max_length=10)
-    desc = models.TextField(max_length=1000)
+    desc = models.CharField(max_length=100)
+    body = models.TextField(max_length=1000)
     def __unicode__(self): 
 	return self.desc
 
