@@ -2,7 +2,9 @@
 
 import os
 
-PROJECT_DIR = '/root/crm-server-002/crm-source/mysite'
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+PROJECT_DIR = PROJECT_PATH 
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -111,11 +113,9 @@ ROOT_URLCONF = 'mysite.urls'
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    "/root/crm-server-002/crm-source/mysite/templates"
-    # Don't forget to use absolute paths, not relative paths.
+    PROJECT_PATH + '/templates/'
 )
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
