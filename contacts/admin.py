@@ -6,6 +6,7 @@ from django.contrib  import admin
 from contacts.models import Contact
 from contacts.models import Category
 from contacts.models import Action
+from contacts.models import Message
 
 
 
@@ -21,6 +22,11 @@ class ActionAdmin(admin.ModelAdmin):
 	search_fields = ['code', 'desc']
 	list_display  = ['code', 'desc']
 
+class MessageAdmin(admin.ModelAdmin):
+	search_fields = ['code', 'desc']
+	list_display  = ['code', 'desc']
+
+admin.site.register(Message,  MessageAdmin)
 admin.site.register(Contact,  ContactAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Action,   ActionAdmin)
