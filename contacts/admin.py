@@ -25,3 +25,7 @@ admin.site.register(Contact,  ContactAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Action,   ActionAdmin)
 
+admin.site.unregister(User)
+admin.site.unregister(Group)
+admin.site.unregister(Site)
+
