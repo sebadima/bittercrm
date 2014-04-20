@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'clienti',
+    'contacts',
     'south',
     'django.contrib.admin',
     'django.contrib.admindocs',
