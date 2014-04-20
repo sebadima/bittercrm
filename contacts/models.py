@@ -6,6 +6,12 @@ from datetime import datetime, timedelta
 import datetime
 
 
+class Message(models.Model):
+    code = models.CharField(max_length=10)
+    desc = models.CharField(max_length=200)
+    def __unicode__(self): 
+	return self.desc
+
 class Action(models.Model):
     code = models.CharField(max_length=10)
     desc = models.CharField(max_length=200)
