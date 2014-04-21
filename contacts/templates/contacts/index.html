@@ -1,19 +1,14 @@
-
 <!DOCTYPE html>
 <html>
 <body>
-
-
 
 <br>
 <h2> Apply following Filters </h2>
 <br>
 
 Chose Message Type
-
 <br>
-
-<select id="Example2">
+<select id="List1">
 {% if latest_poll_list %}
     <ul>
     {% for poll in latest_poll_list %}
@@ -29,10 +24,8 @@ Chose Message Type
 <br>
 
 Choose Target Category
-
 <br>
-
-<select id="Example">
+<select id="List2">
 {% if xx %}
     <ul>
     {% for poll in xx %}
@@ -46,31 +39,23 @@ Choose Target Category
 
 <br>
 <br>
-
-<input id="clickMe" type="button" value="clickme" onclick="doFunction2();" />
+<input id="clickMe" type="button" value="Launch Now!" onclick="doFunction();" />
 <br>
-<input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
+<br>
 
 <script>
 function doFunction()
 {
+var sel    = document.getElementById("List1");
+var value  = sel.options[sel.selectedIndex].value;
+var param1 = sel.options[sel.selectedIndex].text;
 
-var sel = document.getElementById("Example");
-var value = sel.options[sel.selectedIndex].value;
-var text = sel.options[sel.selectedIndex].text;
-alert(text);
-}
-</script>
+var sel    = document.getElementById("List2");
+var value  = sel.options[sel.selectedIndex].value;
+var param2 = sel.options[sel.selectedIndex].text;
 
-
-<script>
-function doFunction2()
-{
-
-var sel = document.getElementById("Example2");
-var value = sel.options[sel.selectedIndex].value;
-var text = sel.options[sel.selectedIndex].text;
-alert(text);
+var url = "http://www.speedystack.com:8044/contacts/mailing" + "/" + param1 + "/" + param2
+window.open(url);
 }
 </script>
 
