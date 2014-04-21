@@ -2,11 +2,15 @@
 from django.http import HttpResponse
 from django.views.generic import ListView
 
-
 from contacts.models import Contact
 
+
 def index(request):
-    return HttpResponse("Started Mass Mailing.")
+    latest_contacts_list = Contact.objects.order_by('nickname')[:20]
+    #latest_poll_list = Contact.objects.order_by('nickname')[:20]
+    ans = '<br> '.join([c.nickname for c in latest_contacts_list])
+    return HttpResponse(ans)
+
 
 import sqlite3
 
@@ -63,18 +67,41 @@ def mailing(request):
 </html>
 
     """
+
     return HttpResponse(ans)
 
 
 
 
-def detail(request, poll_id):
-    return HttpResponse("You're looking at poll %s." % poll_id)
+def candidates(request):
+    latest_poll_list = Contact.objects.order_by('nickname').filter(action_id = 1)[:20]
+    ans = '<br> '.join([p.nickname for p in latest_poll_list])
+    ans = ans + """
+
+<html>
+
+  <head>
+  </head>
+
+  <body>
+    <br>
+    <br>
+ These Email addresses will receive your Mail Campaign...
+    <br>
+    <br>
+    <a href="http://www.speedystack.com:8044/admin/">I Regret, Back to Home</a>
+    <br>
+    <br>
+    <a href="http://www.speedystack.com:8044/contacts/mailing/">Ok, Launch Mail Campaign</a>
+  </body>
+
+</html>
+
+    """
+    return HttpResponse(ans)
 
 
 
 class PublisherList(ListView):
     model = Contact
-
-
 
