@@ -1,8 +1,14 @@
 
+from django.template import RequestContext, loader
+from contacts.models import Contact
+
 from django.http import HttpResponse
 from django.views.generic import ListView
 
 from contacts.models import Contact
+
+import sqlite3
+
 
 
 def index(request):
@@ -11,8 +17,14 @@ def index(request):
     ans = '<br> '.join([c.nickname for c in latest_contacts_list])
     return HttpResponse(ans)
 
+def prova(request):
+    latest_poll_list = Contact.objects.order_by('nickname').filter(action_id = 1)[:20]
+    template = loader.get_template('contacts/index.html')
+    context = RequestContext(request, {
+        'latest_poll_list': latest_poll_list,
+    })
+    return HttpResponse(template.render(context))
 
-import sqlite3
 
 
 
