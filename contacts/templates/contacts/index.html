@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<br>
+<h2> Apply following Filters </h2>
+<br>
+
+Chose Message Type
+
+<br>
+
+<select id="Example2">
+{% if latest_poll_list %}
+    <ul>
+    {% for poll in latest_poll_list %}
+  <option value="/polls/{{ poll }}">{{ poll }}</option>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</select>
+
+<br>
+<br>
+
+Choose Target Category
+
+<br>
+
+<select id="Example">
+{% if xx %}
+    <ul>
+    {% for poll in xx %}
+  <option value="/polls/{{ poll }}">{{ poll }}</option>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</select>
+
+<br>
+<br>
+
+<input id="clickMe" type="button" value="clickme" onclick="doFunction2();" />
+<br>
+<input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
+
+<script>
+function doFunction()
+{
+
+var sel = document.getElementById("Example");
+var value = sel.options[sel.selectedIndex].value;
+var text = sel.options[sel.selectedIndex].text;
+alert(text);
+}
+</script>
+
+
+<script>
+function doFunction2()
+{
+
+var sel = document.getElementById("Example2");
+var value = sel.options[sel.selectedIndex].value;
+var text = sel.options[sel.selectedIndex].text;
+alert(text);
+}
+</script>
+
+
+
+</body>
+</html>
