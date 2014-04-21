@@ -1,28 +1,35 @@
 
-from django.template import RequestContext, loader
-from contacts.models import Contact
 
+from django.template import RequestContext, loader
 from django.http import HttpResponse
 from django.views.generic import ListView
 
-from contacts.models import Contact
-
 import sqlite3
+
+from contacts.models import Contact
 
 
 
 def index(request):
-    latest_contacts_list = Contact.objects.order_by('nickname')[:20]
-    #latest_poll_list = Contact.objects.order_by('nickname')[:20]
-    ans = '<br> '.join([c.nickname for c in latest_contacts_list])
-    return HttpResponse(ans)
+    a = []
+
+
 
 def prova(request):
-    latest_poll_list = Contact.objects.order_by('nickname').filter(action_id = 1)[:20]
+    latest_poll_list = ["aggs", "dd", "ff"]
+    conn = sqlite3.connect("sqlite.db")
+    cursor = conn.cursor()
+    cursor.execute("select desc from contacts_message")
+    latest_poll_list  = cursor.fetchall() 
+
+    xx = []
+    conn = sqlite3.connect("sqlite.db")
+    cursor = conn.cursor()
+    cursor.execute("select desc from contacts_category")
+    xx  = cursor.fetchall() 
+
     template = loader.get_template('contacts/index.html')
-    context = RequestContext(request, {
-        'latest_poll_list': latest_poll_list,
-    })
+    context = RequestContext(request, { 'latest_poll_list': latest_poll_list, 'xx': xx,  })
     return HttpResponse(template.render(context))
 
 
