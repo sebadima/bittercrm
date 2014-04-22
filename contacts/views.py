@@ -81,9 +81,11 @@ def mailing(request, param1, param2):
 
 
 
-    conn = sqlite3.connect("sqlite.db")
     cursor = conn.cursor()
-    cursor.execute("select email from contacts_contact where action_id = 1")
+    query = "select email from contacts_contact where category_id = ANCHOR"
+    query = query.replace('ANCHOR', param2)
+    cursor.execute(query)
+    body = body + param1 + param2 
     a = cursor.fetchall() 
     risp = ""
     for x in range(len(a)):
