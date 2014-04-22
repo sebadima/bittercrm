@@ -90,7 +90,8 @@ def mailing(request, param1, param2):
 
 
     cursor = conn.cursor()
-    query = "select email from contacts_contact where category_id = ANCHOR"
+    #query = "select email from contacts_contact where category_id = ANCHOR"
+    query = "select email from contacts_contact where (category_id = ANCHOR) and (action_id = '01')"
     query = query.replace('ANCHOR', param2)
     cursor.execute(query)
     body = body + "<br> msg:id:/ " + param1 + ' / ' + param2 
