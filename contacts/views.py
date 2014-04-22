@@ -75,7 +75,7 @@ def mailing(request, param1, param2):
     cursor.execute(query)
     a = cursor.fetchall() 
     for x in range(len(a)):
-       body = str(a[x]).replace('\\r' ,'')
+       body = body + str(a[x])[4:]
 
 
 
