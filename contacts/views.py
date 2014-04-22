@@ -75,7 +75,7 @@ def mailing(request, param1, param2):
     cursor.execute(query)
     a = cursor.fetchall() 
     for x in range(len(a)):
-       body = body + str(a[x])[4:]
+       body = body + str(a[x])[3:][:-3]
 
 
 
@@ -85,7 +85,7 @@ def mailing(request, param1, param2):
     query = "select email from contacts_contact where category_id = ANCHOR"
     query = query.replace('ANCHOR', param2)
     cursor.execute(query)
-    body = body + param1 + param2 
+    body = body + "<br> msg:id:/ " + param1 + ' / ' + param2 
     a = cursor.fetchall() 
     risp = ""
     for x in range(len(a)):
