@@ -43,7 +43,7 @@ def prova(request):
 
 
 
-def mailing(request):
+def mailing(request, param1, param2):
 
     import smtplib
 
@@ -55,7 +55,7 @@ def mailing(request):
     subject = ' Cosa sono i programmi di marketing (CRM)?'
     recipient = 'sebastiano.dimartina@gmail.com'
 
-    body  =  "mailing nuova vers"
+    body  =  "mailing nuova vers" + param1 + param2 +" ECCOLI "
 
 
     headers = ["From: " + sender, "Subject: " + subject, "To: " + recipient, "MIME-Version: 1.0", "Content-Type: text/html"]
