@@ -19,7 +19,7 @@ def prova(request):
     conn = sqlite3.connect("sqlite.db")
     cursor = conn.cursor()
     cursor.execute("select desc from contacts_message")
-    latest_poll_list  = cursor.fetchall() 
+    md  = cursor.fetchall() 
 
     conn = sqlite3.connect("sqlite.db")
     cursor = conn.cursor()
@@ -27,7 +27,7 @@ def prova(request):
     xx  = cursor.fetchall() 
 
     template = loader.get_template('contacts/index.html')
-    context = RequestContext(request, { 'latest_poll_list': latest_poll_list, 'xx': xx,  })
+    context = RequestContext(request, { 'md': md, 'xx': xx,  })
     return HttpResponse(template.render(context))
 
 

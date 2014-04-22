@@ -5,14 +5,14 @@
 <br>
 <h2> Apply following Filters </h2>
 <br>
-
 Chose Message Type
 <br>
-<select id="List1">
-{% if latest_poll_list %}
+
+<select id="MessageList">
+{% if md %}
     <ul>
-    {% for poll in latest_poll_list %}
-  <option value="/polls/{{ poll }}">{{ poll }}</option>
+    {% for md in md %}
+  <option value="{{ md }}">{{ md }}</option>
     {% endfor %}
     </ul>
 {% else %}
@@ -22,9 +22,9 @@ Chose Message Type
 
 <br>
 <br>
-
 Choose Target Category
 <br>
+
 <select id="List2">
 {% if xx %}
     <ul>
@@ -46,7 +46,7 @@ Choose Target Category
 <script>
 function doFunction()
 {
-var sel    = document.getElementById("List1");
+var sel    = document.getElementById("MessageList");
 var value  = sel.options[sel.selectedIndex].value;
 var param1 = sel.options[sel.selectedIndex].text;
 
