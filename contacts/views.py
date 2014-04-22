@@ -15,16 +15,27 @@ def index(request):
 
 
 
+
 def prova(request):
-    conn = sqlite3.connect("sqlite.db")
-    cursor = conn.cursor()
-    cursor.execute("select desc from contacts_message")
-    md  = cursor.fetchall() 
 
     conn = sqlite3.connect("sqlite.db")
     cursor = conn.cursor()
+
+    cursor.execute("select code from contacts_message")
+    getcode = cursor.fetchall() 
+
+    cursor.execute("select desc from contacts_message")
+    getdesc = cursor.fetchall() 
+
+    md = zip(getcode, getdesc)
+
+    cursor.execute("select code from contacts_category")
+    getcode = cursor.fetchall() 
+
     cursor.execute("select desc from contacts_category")
-    cd  = cursor.fetchall() 
+    getdesc  = cursor.fetchall() 
+    cd = zip(getcode, getdesc)
+
 
     template = loader.get_template('contacts/index.html')
     context = RequestContext(request, { 'md': md, 'cd': cd,  })
