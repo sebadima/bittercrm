@@ -10,14 +10,13 @@ from contacts.models import Contact
 
 
 
+
 def index(request):
     a = []
 
 
 
-
 def prova(request):
-
     conn = sqlite3.connect("sqlite.db")
     cursor = conn.cursor()
 
