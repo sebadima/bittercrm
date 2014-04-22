@@ -52,8 +52,18 @@ def mailing(request, param1, param2):
 
     sender = 'sebastiano.dimartina@gmail.com'
     password = 'saranjwnfamygrpj'
-    subject = ' Cosa sono i programmi di marketing (CRM)?'
+    subject = '*** '
     recipient = 'sebastiano.dimartina@gmail.com'
+    conn = sqlite3.connect("sqlite.db")
+    body = ""
+
+    cursor = conn.cursor()
+    query = "select desc from contacts_message where code = 'ANCHOR'"
+    query = query.replace('ANCHOR', param1)
+    cursor.execute(query)
+    a = cursor.fetchall() 
+    for x in range(len(a)):
+       subject = subject + str(a[x])[3:][:-3]
 
 
 
@@ -65,8 +75,6 @@ def mailing(request, param1, param2):
     session.starttls()
     session.ehlo
     session.login(sender, password)
-    conn = sqlite3.connect("sqlite.db")
-    body = ""
 
 
     cursor = conn.cursor()
