@@ -16,13 +16,11 @@ def index(request):
 
 
 def prova(request):
-    latest_poll_list = ["aggs", "dd", "ff"]
     conn = sqlite3.connect("sqlite.db")
     cursor = conn.cursor()
     cursor.execute("select desc from contacts_message")
     latest_poll_list  = cursor.fetchall() 
 
-    xx = []
     conn = sqlite3.connect("sqlite.db")
     cursor = conn.cursor()
     cursor.execute("select desc from contacts_category")
