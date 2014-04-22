@@ -24,10 +24,10 @@ def prova(request):
     conn = sqlite3.connect("sqlite.db")
     cursor = conn.cursor()
     cursor.execute("select desc from contacts_category")
-    xx  = cursor.fetchall() 
+    cd  = cursor.fetchall() 
 
     template = loader.get_template('contacts/index.html')
-    context = RequestContext(request, { 'md': md, 'xx': xx,  })
+    context = RequestContext(request, { 'md': md, 'cd': cd,  })
     return HttpResponse(template.render(context))
 
 

@@ -26,10 +26,10 @@ Choose Target Category
 <br>
 
 <select id="List2">
-{% if xx %}
+{% if cd %}
     <ul>
-    {% for poll in xx %}
-  <option value="/polls/{{ poll }}">{{ poll }}</option>
+    {% for cd in cd %}
+  <option value="{{ cd }}">{{ cd }}</option>
     {% endfor %}
     </ul>
 {% else %}
