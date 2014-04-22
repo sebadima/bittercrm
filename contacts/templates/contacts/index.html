@@ -46,16 +46,20 @@ Choose Target Category
 <script>
 function doFunction()
 {
+
 var sel    = document.getElementById("MessageList");
 var value  = sel.options[sel.selectedIndex].value;
 var param1 = sel.options[sel.selectedIndex].text;
+param1     = param1.replace('u', '').replace(',', '').replace('(', '').replace(')', '').split("'"); 
 
 var sel    = document.getElementById("List2");
 var value  = sel.options[sel.selectedIndex].value;
 var param2 = sel.options[sel.selectedIndex].text;
+param2     = param2.replace('u', '').replace(',', '').replace('(', '').replace(')', '').split("'"); 
 
-var url = "http://www.speedystack.com:8044/contacts/mailing" + "/" + param1 + "/" + param2
+var url = "http://www.speedystack.com:8044/contacts/mailing" + "/" + param1[1]+ "/" + param2[1] + '/'
 window.open(url);
+
 }
 </script>
 
