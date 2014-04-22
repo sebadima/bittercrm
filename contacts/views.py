@@ -105,7 +105,7 @@ def mailing(request, param1, param2):
   </head>
 
   <body>
-    <a href="http://www.speedystack.com:8044/admin/">Mailing Successfully terminated. Back to Home</a>
+    <a href="http://www.speedystack.com:8044/admin/">Mailing Successfully terminated. Back to Home or close this Tab</a>
   </body>
 
 </html>
