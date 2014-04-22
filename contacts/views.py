@@ -128,13 +128,9 @@ def candidates(request):
   <body>
     <br>
     <br>
- These Email addresses will receive your Mail Campaign...
+ These Email addresses will receive your Mail Campaign... presse BACK button on your Browser
     <br>
     <br>
-    <a href="http://www.speedystack.com:8044/admin/">I Regret, Back to Home</a>
-    <br>
-    <br>
-    <a href="http://www.speedystack.com:8044/contacts/mailing/">Ok, Launch Mail Campaign</a>
   </body>
 
 </html>
