@@ -1,0 +1,10 @@
+
+<form action="{% url 'polls:vote' poll.id %}" method="post">
+{% csrf_token %}
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+<input type="submit" value="Vote" />
+</form>
+
+<a href="http://www.speedystack.com:8044/contacts/candidates">Click to mail or press BACK to return...</a>
+

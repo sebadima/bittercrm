@@ -1,0 +1,6 @@
+echo 'from django.conf import settings; print settings.INSTALLED_APPS; quit();' | \
+python manage.py shell --plain 2>&1 | \
+tail -n1 | sed -r "s|^.*\((.*)\).*$|\1|; s|[',]| |g; s|django\.contrib\.||g" | \
+xargs python manage.py sqlclear | \
+python manage.py dbshell && python manage.py syncdb
+
