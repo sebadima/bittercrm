@@ -51,7 +51,11 @@ def mailing(request, param1, param2):
     SMTP_PORT = 587
 
     sender = 'sebastiano.dimartina@gmail.com'
+<<<<<<< .merge_file_eWVqoC
     password = 'cxozbuhxjzrunquz'
+=======
+    password = 'yourcustomgmailpassword'
+>>>>>>> .merge_file_aJHFwC
     subject = '*** '
     recipient = 'sebastiano.dimartina@gmail.com'
     conn = sqlite3.connect("sqlite.db")
