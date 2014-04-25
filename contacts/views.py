@@ -51,7 +51,7 @@ def mailing(request, param1, param2):
     SMTP_PORT = 587
 
     sender = 'sebastiano.dimartina@gmail.com'
-    password = 'saranjwnfamygrpj'
+    password = 'cxozbuhxjzrunquz'
     subject = '*** '
     recipient = 'sebastiano.dimartina@gmail.com'
     conn = sqlite3.connect("sqlite.db")
