@@ -52,7 +52,6 @@ def mailing(request, param1, param2):
 
     sender = 'sebastiano.dimartina@gmail.com'
     password = 'cxozbuhxjzrunquz'
-    password = 'yourcustomgmailpassword'
     subject = '*** '
     recipient = 'sebastiano.dimartina@gmail.com'
     conn = sqlite3.connect("sqlite.db")
