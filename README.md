@@ -2,7 +2,7 @@
 
 This project is a skinny alternative to bigger crm applications, (Sugacrm) with a simple mailing workflow.
 
-The app is already working, and i use it on daily base for my daily job marketing.
+The app is already working, and i use it on daily base for my office job marketing.
 
 ----------------------------------------------------------------------------------------------
 
