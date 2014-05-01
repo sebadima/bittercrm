@@ -1,8 +1,6 @@
 
 This project is simple alternative to bigger crm applications, (Sugacrm) with a simple mailing workflow.
 
-At this moment my apps is just in a pre alpha release, but i would like to collaborate with some python Django programmer.
-
 The app is already working, and i use it on daily base for my daily job marketing.
 
 
