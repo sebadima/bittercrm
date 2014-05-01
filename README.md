@@ -28,6 +28,6 @@ To run the project:
 
    python server.py &
 
-   but do not forget the ampersand '&' at the end of command
+   do not forget the ampersand '&' at the end of command
 
    press return.
