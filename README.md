@@ -1,10 +1,9 @@
 
-
 This project is a skinny alternative to bigger crm applications, (Sugacrm) with a simple mailing workflow.
 
 The app is already working, and i use it on daily base for my office job marketing.
 
-----------------------------------------------------------------------------------------------
+------
 
 
 To run the project:
@@ -19,7 +18,7 @@ To run the project:
 3) edit runserver file to change the ip port .
 
 
-----------------------------------------------------------------------------------------------
+------
 
 
 4) if you want to execute the app with a real http server (cherrypy):
