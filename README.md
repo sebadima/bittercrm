@@ -1,4 +1,3 @@
-
 This project is a skinny alternative to bigger crm applications, (Sugacrm) with a simple mailing workflow.
 
 The app is already working, and i use it on daily base for my office job marketing.
@@ -30,3 +29,26 @@ To run the project:
    do not forget the ampersand '&' at the end of command
 
    press return.
+
+
+5) QUICK INSTALL:
+
+apt-get install python-setuptools python-dev build-essential
+
+easy_install virtualenv
+
+virtualenv --no-site-packages bittercrm
+
+source bittercrm/bin/activate
+
+cd bittercrm
+
+pip install -e git+https://github.com/django/django.git@1.5b2#egg=django
+
+pip install south
+
+git clone https://github.com/sebadima/bittercrm.git
+
+cd bittercrm
+
+sh runserver
