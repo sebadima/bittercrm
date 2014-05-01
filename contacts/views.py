@@ -50,10 +50,21 @@ def mailing(request, param1, param2):
     SMTP_SERVER = 'smtp.gmail.com'
     SMTP_PORT = 587
 
-    sender = 'sebastiano.dimartina@gmail.com'
-    password = 'cxozbuhxjzrunquz'
+
+    load_profile = open('setup', "r")
+    read_it = load_profile.read()
+    myLines = []
+
+    for line in read_it.splitlines():
+        if line.startswith("mail-login="):
+            sender = line.replace("mail-login=", "")
+        if line.startswith("mail-password="):
+            password = line.replace("mail-password=", "")
+            myLines.append(line)
+
+
     subject = '*** '
-    recipient = 'sebastiano.dimartina@gmail.com'
+    recipient = sender
     conn = sqlite3.connect("sqlite.db")
     body = ""
 

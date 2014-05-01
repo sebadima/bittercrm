@@ -10,23 +10,16 @@ The app is already working, and i use it on daily base for my daily job marketin
 
 To run the project:
 
-1) create a file named "setup" in main project directory
-   with the following content:
+1) execute 'cp setup.sample setup' in main project directory,
+   and customize newly created file with your real gmail credentials.
 
+2) launch the app with  'sh runserver'
+   this will execute the code on ip port 8044.
 
-------------- setup ---------------
-[mail]
-mail-login=your-gmail-login
-mail-password=your-gmail-password
-------------- setup ---------------
-
-
-2) launch the app with : sh runserver
-   this will execute the code on ip port 8044
-
-3) edit runserver file to change the port 
+3) edit runserver file to change the ip port .
 
 4) if you want to execute the app with a real http server (cherrypy):
    pip istall cherrypy
    python server.py &
-   do not forget the ampersand '&' at the end of command
+   but do not forget the ampersand '&' at the end of command
+   press return.
