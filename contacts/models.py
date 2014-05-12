@@ -10,10 +10,14 @@ import datetime
 class Essay(models.Model):
     name = models.CharField(max_length=2000, unique=False)
     short_desc = models.TextField(unique=False)
+    def __unicode__(self): 
+	return self.name
 
 class Para(models.Model):
     text = models.TextField(unique=False)
     essay = models.ForeignKey(Essay, unique=False)
+    def __unicode__(self): 
+	return self.text
 class Message(models.Model):
     code = models.CharField(max_length=10)
     desc = models.CharField(max_length=100)
