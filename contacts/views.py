@@ -15,6 +15,21 @@ def index(request):
     a = []
 
 
+def test(request):
+
+    conn = sqlite3.connect("sqlite.db")
+    cursor = conn.cursor()
+
+    cursor.execute("select email from contacts_contact")
+    getemail = cursor.fetchall() 
+
+    template = loader.get_template('contacts/test.html')
+    context = RequestContext(request, { 'getemail': getemail,  })
+    return HttpResponse(template.render(context))
+
+
+
+
 
 def prova(request):
     conn = sqlite3.connect("sqlite.db")
@@ -160,8 +175,5 @@ def candidates(request):
     """
     return HttpResponse(ans)
 
-
-
 class PublisherList(ListView):
     model = Contact
-
