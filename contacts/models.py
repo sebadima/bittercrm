@@ -6,6 +6,15 @@ from datetime import datetime, timedelta
 import datetime
 
 
+
+class Essay(models.Model):
+    name = models.CharField(max_length=2000, unique=False)
+    short_desc = models.TextField(unique=False)
+
+class Para(models.Model):
+    text = models.TextField(unique=False)
+    order = models.IntegerField(unique=True)
+    essay = models.ForeignKey(Essay, unique=False)
 class Message(models.Model):
     code = models.CharField(max_length=10)
     desc = models.CharField(max_length=100)
@@ -54,4 +63,3 @@ class Contact(models.Model):
     category          = models.ForeignKey(Category)
     action            = models.ForeignKey(Action)
  
-
