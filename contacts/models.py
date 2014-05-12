@@ -13,7 +13,6 @@ class Essay(models.Model):
 
 class Para(models.Model):
     text = models.TextField(unique=False)
-    order = models.IntegerField(unique=True)
     essay = models.ForeignKey(Essay, unique=False)
 class Message(models.Model):
     code = models.CharField(max_length=10)
