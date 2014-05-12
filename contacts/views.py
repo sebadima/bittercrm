@@ -24,10 +24,15 @@ def test(request):
     getemail = cursor.fetchall() 
 
     template = loader.get_template('contacts/test.html')
-    context = RequestContext(request, { 'getemail': getemail,  })
-    return HttpResponse(template.render(context))
+    #context = RequestContext(request, { 'getemail': getemail,  })
+    #return HttpResponse(template.render(context))
 
 
+
+
+    poll_list = Contact.objects.order_by('-email')[:5]
+    output = ', '.join([p.email for p in poll_list])
+    return HttpResponse(output)
 
 
 
