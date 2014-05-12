@@ -44,6 +44,7 @@ admin.site.unregister(Site)
 
 class ParaInline(admin.TabularInline):
     model = Para
+    extra = 1
 
 class EssayAdmin(admin.ModelAdmin):
     inlines = [ParaInline,]
