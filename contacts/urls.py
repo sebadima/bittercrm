@@ -1,7 +1,6 @@
 
 from django.conf.urls import patterns, url
 
-from contacts.views import PublisherList
 from contacts import views
 
 

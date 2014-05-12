@@ -160,8 +160,3 @@ def candidates(request):
     """
     return HttpResponse(ans)
 
-
-
-class PublisherList(ListView):
-    model = Contact
-
