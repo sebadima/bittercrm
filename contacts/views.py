@@ -141,12 +141,9 @@ def candidates(request):
     latest_poll_list = Contact.objects.order_by('nickname').filter(action_id = 1)[:20]
     ans = '<br> '.join([p.nickname for p in latest_poll_list])
     ans = ans + """
-
 <html>
-
   <head>
   </head>
-
   <body>
     <br>
     <br>
@@ -154,9 +151,8 @@ def candidates(request):
     <br>
     <br>
   </body>
-
 </html>
-
     """
+
     return HttpResponse(ans)
 
