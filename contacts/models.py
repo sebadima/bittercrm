@@ -1,8 +1,6 @@
 
 from django.db import models
 from datetime import datetime, timedelta
-
-#from datetime import *
 import datetime
 
 
@@ -43,6 +41,7 @@ def default_name():
 def default_lastname():
     return  "lastname"
 
+
 class Contact(models.Model):
     name              = models.CharField(max_length=200, default                 = default_name)
     lastname          = models.CharField(max_length=200, default                 = default_lastname)
@@ -55,3 +54,8 @@ class Contact(models.Model):
     action            = models.ForeignKey(Action)
  
 
+class Comment(models.Model):
+    text    = models.TextField(unique=False)
+    contact = models.ForeignKey(Contact, unique=False)
+    def __unicode__(self): 
+	return self.text

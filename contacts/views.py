@@ -1,5 +1,4 @@
 
-
 from django.template import RequestContext, loader
 from django.http import HttpResponse
 from django.views.generic import ListView
@@ -10,9 +9,35 @@ from contacts.models import Contact
 
 
 
-
 def index(request):
-    a = []
+
+    conn = sqlite3.connect("sqlite.db")
+    cursor = conn.cursor()
+
+    cursor.execute("select email from contacts_contact")
+    getemail = cursor.fetchall() 
+
+    template = loader.get_template('contacts/index.html')
+    context = RequestContext(request, { 'getemail': getemail,  })
+    return HttpResponse(template.render(context))
+
+
+
+def test(request):
+
+    conn = sqlite3.connect("sqlite.db")
+    cursor = conn.cursor()
+
+    cursor.execute("select email from contacts_contact")
+    getemail = cursor.fetchall() 
+
+    template = loader.get_template('contacts/test.html')
+    context = RequestContext(request, { 'getemail': getemail,  })
+    return HttpResponse(template.render(context))
+
+
+
+
 
 
 
@@ -36,7 +61,7 @@ def prova(request):
     cd = zip(getcode, getdesc)
 
 
-    template = loader.get_template('contacts/index.html')
+    template = loader.get_template('contacts/prova.html')
     context = RequestContext(request, { 'md': md, 'cd': cd,  })
     return HttpResponse(template.render(context))
 
