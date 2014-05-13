@@ -1,8 +1,6 @@
 
 from django.db import models
 from datetime import datetime, timedelta
-
-#from datetime import *
 import datetime
 
 
