@@ -6,18 +6,6 @@ from datetime import datetime, timedelta
 import datetime
 
 
-
-class Essay(models.Model):
-    name = models.CharField(max_length=2000, unique=False)
-    short_desc = models.TextField(unique=False)
-    def __unicode__(self): 
-	return self.name
-
-class Para(models.Model):
-    text = models.TextField(unique=False)
-    essay = models.ForeignKey(Essay, unique=False)
-    def __unicode__(self): 
-	return self.text
 class Message(models.Model):
     code = models.CharField(max_length=10)
     desc = models.CharField(max_length=100)
@@ -55,6 +43,7 @@ def default_name():
 def default_lastname():
     return  "lastname"
 
+
 class Contact(models.Model):
     name              = models.CharField(max_length=200, default                 = default_name)
     lastname          = models.CharField(max_length=200, default                 = default_lastname)
@@ -66,3 +55,9 @@ class Contact(models.Model):
     category          = models.ForeignKey(Category)
     action            = models.ForeignKey(Action)
  
+
+class Comment(models.Model):
+    text    = models.TextField(unique=False)
+    contact = models.ForeignKey(Contact, unique=False)
+    def __unicode__(self): 
+	return self.text
