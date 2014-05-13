@@ -7,6 +7,8 @@ from contacts.models import Contact
 from contacts.models import Category
 from contacts.models import Action
 from contacts.models import Message
+from contacts.models import Para
+from contacts.models import Essay
 
 
 
@@ -38,3 +40,14 @@ admin.site.register(Action,   ActionAdmin)
 admin.site.unregister(User)
 admin.site.unregister(Group)
 admin.site.unregister(Site)
+
+
+class ParaInline(admin.TabularInline):
+    model = Para
+    extra = 1
+
+class EssayAdmin(admin.ModelAdmin):
+    inlines = [ParaInline,]
+
+#Add the ModelAdmin for Essay
+admin.site.register(Essay, EssayAdmin)
