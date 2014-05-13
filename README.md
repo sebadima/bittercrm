@@ -25,7 +25,7 @@ git clone https://github.com/sebadima/bittercrm.git
 
 cd bittercrm
 
-sh runserver
+sh django_server
 
 ------------------
 
@@ -40,7 +40,7 @@ To customize the project:
 2) launch the app with  'sh runserver' this will execute the code on ip port 8044.
 
 
-3) edit runserver file to change the ip port.
+3) edit django_server file to change the ip port.
 
 
 ------
