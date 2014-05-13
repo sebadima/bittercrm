@@ -32,14 +32,14 @@ class MessageAdmin(admin.ModelAdmin):
         ordering      = ('code',)
 
 class CommentInline(admin.TabularInline):
-    model = Comment
-    extra = 1
+        model = Comment
+        extra = 1
 
 class ContactAdmin(admin.ModelAdmin):
-    inlines = [CommentInline,]
-    search_fields = ['nickname', 'email']
-    list_display  = ['nickname', 'email']
-    ordering      = ('nickname',)
+        inlines = [CommentInline,]
+        search_fields = ['nickname', 'email']
+        list_display  = ['nickname', 'email']
+        ordering      = ('nickname',)
 
 
 admin.site.register(Message,  MessageAdmin)
