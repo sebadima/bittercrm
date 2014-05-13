@@ -36,11 +36,9 @@ To customize the project:
 
 1) execute 'cp setup.sample setup' in main project directory, and customize newly created file with your real gmail  credentials.
 
+2) edit django_server file to change the ip port if needed.
 
-2) launch the app with  'sh runserver' this will execute the code on ip port 8044.
-
-
-3) edit django_server file to change the ip port.
+3) launch the app with  'sh django_server' this will execute the code on ip port 8044.
 
 
 ------
