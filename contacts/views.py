@@ -37,11 +37,8 @@ def test(request):
 
 
 
-
-
-
-
 def prova(request):
+
     conn = sqlite3.connect("sqlite.db")
     cursor = conn.cursor()
 
@@ -102,8 +99,6 @@ def mailing(request, param1, param2):
        subject = subject + str(a[x])[3:][:-3]
 
 
-
-
     headers = ["From: " + sender, "Subject: " + subject, "To: " + recipient, "MIME-Version: 1.0", "Content-Type: text/html"]
     headers = "\r\n".join(headers)
     session = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
@@ -122,11 +117,7 @@ def mailing(request, param1, param2):
        body = body + str(a[x])[3:][:-3]
 
 
-
-
-
     cursor = conn.cursor()
-    #query = "select email from contacts_contact where category_id = ANCHOR"
     query = "select email from contacts_contact where (category_id = ANCHOR) and (action_id = '01')"
     query = query.replace('ANCHOR', param2)
     cursor.execute(query)
@@ -145,14 +136,11 @@ def mailing(request, param1, param2):
     ans = """
 
 <html>
-
   <head>
   </head>
-
   <body>
     <a href="http://www.speedystack.com:8044/admin/">Mailing Successfully terminated. Back to Home or close this Tab</a>
   </body>
-
 </html>
 
     """

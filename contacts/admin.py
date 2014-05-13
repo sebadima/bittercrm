@@ -10,7 +10,6 @@ from contacts.models import Message
 from contacts.models import Comment
 
 
-
 class ContactAdmin(admin.ModelAdmin):
 	search_fields = ['nickname', 'email']
 	list_display  = ['nickname', 'email']
@@ -46,6 +45,7 @@ admin.site.register(Message,  MessageAdmin)
 admin.site.register(Contact,  ContactAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Action,   ActionAdmin)
+
 
 admin.site.unregister(User)
 admin.site.unregister(Group)

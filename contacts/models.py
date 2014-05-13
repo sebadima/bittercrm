@@ -11,11 +11,13 @@ class Message(models.Model):
     def __unicode__(self): 
 	return self.desc
 
+
 class Action(models.Model):
     code = models.CharField(max_length=10)
     desc = models.CharField(max_length=200)
     def __unicode__(self): 
 	return self.desc
+
 
 class Category(models.Model):
     code = models.CharField(max_length=10)
@@ -59,3 +61,4 @@ class Comment(models.Model):
     contact = models.ForeignKey(Contact, unique=False)
     def __unicode__(self): 
 	return self.text
+
