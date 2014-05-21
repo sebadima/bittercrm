@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<body background="https://dl.dropboxusercontent.com/u/5590057/img/simple%20backgroud/bb3.png">
+
+<br>
+<br>
+<br>
+<br>
+<h2> Apply following Filters </h2>
+<br>
+Choose Message Type
+<br>
+
+<select id="MessageList">
+{% if md %}
+    <ul>
+    {% for md in md %}
+  <option value="{{ md }}">{{ md }}</option>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</select>
+
+<br>
+<br>
+Choose Target Category
+<br>
+
+<select id="List2">
+{% if cd %}
+    <ul>
+    {% for cd in cd %}
+  <option value="{{ cd }}">{{ cd }}</option>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</select>
+
+<br>
+<br>
+<input id="clickMe" type="button" value="Launch Now!" onclick="doFunction();" />
+<br>
+<br>
+
+<script>
+function doFunction()
+{
+
+var sel    = document.getElementById("MessageList");
+var value  = sel.options[sel.selectedIndex].value;
+var param1 = sel.options[sel.selectedIndex].text;
+param1     = param1.replace('u', '').replace(',', '').replace('(', '').replace(')', '').split("'"); 
+
+var sel    = document.getElementById("List2");
+var value  = sel.options[sel.selectedIndex].value;
+var param2 = sel.options[sel.selectedIndex].text;
+param2     = param2.replace('u', '').replace(',', '').replace('(', '').replace(')', '').split("'"); 
+
+var url = "http://www.speedystack.com:8044/contacts/mailing" + "/" + param1[1]+ "/" + param2[1] + '/'
+window.open(url);
+
+}
+</script>
+
+
+
+</body>
+</html>
+
