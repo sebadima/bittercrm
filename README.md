@@ -46,7 +46,7 @@ To customize the project:
 
 If you want to execute the app with a real http server (cherrypy, much simpler than apache):
 
-   pip istall cherrypy
+   pip install cherrypy
 
    python server.py & 
    
